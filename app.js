@@ -42,7 +42,9 @@ app.get("/", (req, res) => {
 app.get("/listings", async (req, res) => {
  const allListings = await Listing.find({});
  res.render("listings/index.ejs", {allListings});
+ 
   });
+  
 
   //NEW ROUTE
 

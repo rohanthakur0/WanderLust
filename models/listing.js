@@ -10,8 +10,8 @@ const listingSchema = new Schema({
   description: String,
   image: {
     type: String,
-    default: "https://unsplash.com/photos/the-sun-is-setting-over-a-valley-with-mountains-in-the-background-8KdZlqwRnYg",
-    set: (v) => v === ""? "https://unsplash.com/photos/the-sun-is-setting-over-a-valley-with-mountains-in-the-background-8KdZlqwRnYg" :v,
+    default: "https://images.unsplash.com/photo-1578645510447-e20b4311e3ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDF8fGNhbXBpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
+    set: (v) => v === ""? "https://images.unsplash.com/photo-1578645510447-e20b4311e3ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDF8fGNhbXBpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" :v,
   },
   price: String,
   location: String,
