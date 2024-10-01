@@ -22,7 +22,7 @@ const userRouter = require("./routes/user.js");
 
 
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/summerlust";
+const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
 
 main()
 .then(() => {
@@ -76,24 +76,22 @@ passport.deserializeUser(User.deserializeUser());
 
 app.use((req, res, next) => {
   res.locals.success = req.flash("success");
- next();  res.locals.error = req.flash("error");
+  res.locals.error = req.flash("error");
+  next();  
 });
 
 
 
 
-app.get("/demouser", async(req, res) => {
-  let fakeUser = new User({
-    email: "student@gmail.com",
-    username: "delta-student"
-  });
+// app.get("/demouser", async(req, res) => {
+//   let fakeUser = new User({
+//     email: "student@gmail.com",
+//     username: "delta-student"
+//   });
 
-  let registeredUser = await User.register(fakeUser, "helloworld");
-  res.send(registeredUser);
-})
-
-
-
+//   let registeredUser = await User.register(fakeUser, "helloworld");
+//   res.send(registeredUser);
+// })
 
 
 
@@ -123,19 +121,3 @@ app.listen(8080, () => {
   console.log("server is listening to port 8080");
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

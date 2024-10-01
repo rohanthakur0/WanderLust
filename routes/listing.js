@@ -14,7 +14,7 @@ const validateListing = (req, res, next) => {
  
   if(error) {
     let errmsg = error.details.map((el) => el.message).join(",");
-    throw new ExpressError(400, errMsg );
+    throw new ExpressError(400, errmsg );
   } else {
     next();
   }
@@ -33,6 +33,11 @@ router.get("/",wrapAsync( async (req, res) => {
    //NEW ROUTE
  
  router.get("/new", (req, res) => {
+  console.log(req.user);
+    if(!req.isAuthenticated()) {
+    req.flash("error", "you must be logged in to create listing");
+     return res.redirect("/login");
+  }
    res.render("listings/new.ejs");
  });
  
