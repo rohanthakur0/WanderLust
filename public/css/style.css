@@ -24,6 +24,7 @@ body {
 
 .nav-link {
   color: #222222 !important;
+  margin-left: 1rem;
 }
 /*Footer */
 .f-info-links a {
