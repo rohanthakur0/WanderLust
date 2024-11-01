@@ -131,8 +131,11 @@ color: #222222;
 }
 
 
-
-
+/* Map */
+#map {
+ height: 400px;
+ width: 80vh;
+}
 
 
 
